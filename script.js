@@ -8,7 +8,7 @@ function displayBooks(bookArray = books) {
   const table = document.getElementById("bookList");
   table.innerHTML = "";
 
-     bookArray.forEach((book, index) => {
+     bookArray.map((book, index) => {
       let row = `
       <tr>
     <td>${book.title}</td>
