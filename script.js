@@ -79,12 +79,14 @@ function filterBooks() {
 }
 
 
-function sortBooks(criteria) {
-  if (criteria === "priceAsc") {
+function sortBooks(criteria)
+ {
+  criteria = criteria.toLowerCase(); 
+  if (criteria === "priceasc") {
     books.sort((a, b) => a.price - b.price);
-} else if (criteria === "priceDesc") {
+} else if (criteria === "pricedesc") {
     books.sort((a, b) => b.price - a.price);
-} else if (criteria === "ratingDesc") {
+} else if (criteria === "ratingdesc") {
     books.sort((a, b) => b.rating - a.rating);
   }
   displayBooks();
