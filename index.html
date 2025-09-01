@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Collection Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1> Book Collection  </h1>
+
+
+  <div class="form-container">
+<h2>Add New Book</h2>
+<input type="text" id="title"  placeholder="Book Title">
+<input type="text"id="author"placeholder="Author">
+<input type="text"  id="genre"  placeholder="Genre">
+<input type="number"id="price"placeholder="Price">
+<input type="number"id="rating"placeholder="Rating (1-5)">
+<button onclick="addBook()"> Add Book</button>
+<p id="error" class="error"> </p>
+</div>
+
+
+  <div class="filter-container">
+      <h2>Filter & Sort</h2>
+  <input type="text" id="searchTitle" placeholder="Search by Title" oninput="filterBooks()">
+    
+       <input type="number" id="minPrice" placeholder="Min Price" oninput="filterBooks()">
+<input type="number" id="maxPrice" placeholder="Max Price" oninput="filterBooks()">
+    
+<button onclick="sortBooks('priceAsc')">ascending</button>
+
+    <button onclick="sortBooks('priceDesc')">descending </button>
+
+        <button onclick="sortBooks('ratingDesc')">Sort by Rating </button>
+  </div>
+
+
+  <table id="bookTable">
+       <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Genre</th>
+        <th>Price</th>
+        <th>Rating</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+        <tbody id="bookList"></tbody>
+  </table>
+
+      <script src="script.js"></script>
+</body>
+</html>
