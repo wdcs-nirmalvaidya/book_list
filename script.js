@@ -8,7 +8,7 @@ function displayBooks(bookArray = books) {
   const table = document.getElementById("bookList");
   table.innerHTML = "";
 
-     bookArray.map((book, index) => {
+     bookArray.map((book, position) => {
       let row = `
       <tr>
     <td>${book.title}</td>
@@ -16,7 +16,7 @@ function displayBooks(bookArray = books) {
     <td>${book.genre}</td>
     <td>₹${book.price}</td>
     <td>${book.rating}</td>
-    <td><button class="delete-btn" onclick="deleteBook(${index})">Delete</button></td>
+    <td><button class="delete-btn" onclick="deleteBook(${position})">Delete</button></td>
     </tr>
     `;
     table.innerHTML += row;
@@ -58,8 +58,8 @@ document.getElementById("genre").value = "";
    document.getElementById("price").value = "";
 document.getElementById("rating").value = "";
 }
-function deleteBook(index) {
-  books.splice(index, 1);
+function deleteBook(position) {
+  books.splice(position, 1);
   displayBooks();
 }
 
@@ -93,3 +93,4 @@ function sortBooks(criteria)
 }
 
 displayBooks();
+
