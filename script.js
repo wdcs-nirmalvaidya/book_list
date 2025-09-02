@@ -61,7 +61,12 @@ document.getElementById("rating").value = "";
 function deleteBook(position) {
   books.splice(position, 1);
   displayBooks();
+   let confirmation = confirm("Are you sure you want to delete");
+    if (confirmation) {
+        row.parentElement.parentElement.remove()
+    }
 }
+
 
 
 function filterBooks() {
