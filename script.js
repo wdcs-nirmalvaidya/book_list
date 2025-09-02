@@ -63,11 +63,9 @@ function deleteBook(position) {
   displayBooks();
    let confirmation = confirm("Are you sure you want to delete");
     if (confirmation) {
-        row.parentElement.parentElement.remove()
+        books.splice(position,1)
     }
 }
-
-
 
 function filterBooks() {
      const searchTitle = document.getElementById("searchTitle").value.toLowerCase();
